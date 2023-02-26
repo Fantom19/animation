@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+   background: linear-gradient(45deg, #03001e, #7303c0, #ec38bc, #fdeff9);
+   background-size: 400% 400%;
+   animation: gradient 10s ease infinite;
+   
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.pulsing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25%;
+    gap: 150px;
+}
+
+.pulsing-1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: red;
+    box-shadow: 0 0 0 0 rgba(224, 11, 11, 0.267);
+    animation:pul-1 1s infinite;
+    transition: 1s;
+}
+
+.pulsing-1:hover {
+    transform: scale(1.5);
+}
+
+@keyframes pul-1{
+  100% {box-shadow: 0 0 0 30px #0004;}
+}
+
+.pulsing-2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: red;
+    box-shadow: 0 0 0 0 rgba(224, 11, 11, 0.267);
+    animation:pul-2 1.5s infinite linear;
+    position: relative;
+    transition: 1s;
+}
+
+.pulsing-2:hover {
+    transform: scale(1.5);
+}
+
+.pulsing-2::before,
+.pulsing-2::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 #0004;
+    animation: inherit;
+    animation-delay: -0.5s;
+}
+
+.pulsing-2::after {
+    animation-delay: -1s;
+}
+
+@keyframes pul-2 {
+    100%{box-shadow: 0 0 0 40px #0000;}
+}
